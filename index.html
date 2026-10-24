@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Melanie Perdigão | Doces e Bolos Personalizados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        melanie: '#E91E63',          /* Rosa principal magenta vibrante */
+                        'melanie-soft': '#F48FB1',     /* Rosa claro pastel do logo */
+                        'melanie-dark': '#C2185B',     /* Rosa escuro para hover */
+                        'melanie-light': '#FCE4EC',    /* Fundo tom rosa bem suave */
+                        'melanie-cream': '#FFF8FA',    /* Creme rosado clean */
+                        'melanie-border': '#F8BBD0'    /* Bordas delicadas */
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FFF8FA; -webkit-tap-highlight-color: transparent; }
+        .scroll-clean::-webkit-scrollbar { display: none; }
+        .scroll-clean { -ms-overflow-style: none; scrollbar-width: none; }
+        .img-fade { transition: opacity 0.3s ease-in-out, transform 0.3s ease-out; }
+    </style>
+</head>
+<body class="text-gray-700 antialiased selection:bg-melanie selection:text-white pb-24 md:pb-0">
+
+    <!-- NAV BAR CLEAN -->
+    <header class="bg-white/90 backdrop-blur-md shadow-xs sticky top-0 z-40 border-b border-melanie-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#inicio" class="flex items-center gap-3">
+                    <img src="imagens/logo.png" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x150/F48FB1/FFFFFF?text=Melanie+Perdigao';" alt="Melanie Perdigão Logo" class="h-12 w-12 object-cover rounded-full border-2 border-melanie-soft p-0.5 shadow-xs">
+                    <div class="flex flex-col">
+                        <span class="text-lg sm:text-xl font-extrabold text-gray-900 tracking-tight uppercase">Melanie Perdigão</span>
+                        <span class="text-[9px] sm:text-[10px] text-melanie uppercase tracking-widest font-semibold italic -mt-1">Doces & Bolos Personalizados</span>
+                    </div>
+                </a>
+                
+                <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-600">
+                    <a href="#inicio" class="hover:text-melanie transition duration-200">Início</a>
+                    <a href="#kits" class="hover:text-melanie transition duration-200 text-melanie font-semibold">Kit Aniversário</a>
+                    <a href="#cardapio" class="hover:text-melanie transition duration-200">Menu & Produtos</a>
+                    <a href="#galeria" class="hover:text-melanie transition duration-200">Galeria</a>
+                    <a href="#calculadora" class="hover:text-melanie transition duration-200">Calculadora</a>
+                    <a href="#contacto-secao" class="hover:text-melanie transition duration-200">Contacto</a>
+                </nav>
+
+                <button onclick="toggleCarrinho()" class="relative bg-melanie-light hover:bg-melanie-soft/30 text-melanie px-4 py-2.5 rounded-full transition flex items-center gap-2 font-medium text-sm border border-melanie-border">
+                    <i class="fa-solid fa-bag-shopping text-melanie text-base"></i>
+                    <span class="hidden sm:inline">Meu Pedido</span>
+                    <span id="cart-count-header" class="bg-melanie text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION CLEAN -->
+    <section id="inicio" class="relative text-gray-800 min-h-[60vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-melanie-cream to-melanie-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 py-12 md:py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-5 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white text-melanie border border-melanie-border px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase shadow-xs">
+                        <i class="fa-solid fa-heart text-melanie"></i> Since 2015
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-light tracking-tight text-gray-900 leading-tight">Melanie <span class="font-extrabold text-melanie">Perdigão</span></h1>
+                    <p class="text-gray-600 text-base sm:text-lg font-normal italic">"The secret ingredient is always love ❤️🎂"</p>
+                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed max-w-lg mx-auto md:mx-0">
+                        Doces e bolos personalizados feitos com dedicação e perfeição. Localizados em Pioneiros, Beira, Moçambique.
+                    </p>
+                    <div class="pt-3 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                        <a href="#kits" class="bg-melanie hover:bg-melanie-dark text-white font-semibold px-7 py-3.5 rounded-full shadow-sm transition-all duration-300 text-center uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-gift"></i> Ver Kit de Aniversário
+                        </a>
+                        <a href="#cardapio" class="bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 font-semibold px-7 py-3.5 rounded-full shadow-xs transition-all duration-300 text-center uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+                            Ver Menu Completo <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- IMAGEM HERO LOGO -->
+                <div class="flex justify-center md:justify-end">
+                    <div class="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-sm bg-white p-3 border border-melanie-border/50 group">
+                        <img src="imagens/logo.png" onerror="tratarErroImagem(this)" onclick="abrirZoom(this.src)" alt="Melanie Perdigão Logo" class="w-full h-full object-cover rounded-2xl group-hover:scale-102 transition duration-500 cursor-zoom-in">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: KIT ESPECIAL DE ANIVERSÁRIO -->
+    <section id="kits" class="bg-white py-16 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2 mb-10">
+                <span class="text-melanie text-xs font-bold uppercase tracking-widest bg-melanie-light px-3.5 py-1 rounded-full border border-melanie-border">
+                    <i class="fa-solid fa-cake-candles mr-1"></i> Destaques
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Kit Especial de Aniversário</h2>
+                <p class="text-gray-500 text-xs sm:text-sm">A escolha perfeita para tornar a sua celebração inesquecível.</p>
+                <div class="w-12 h-0.5 bg-melanie mx-auto mt-2"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto bg-melanie-cream rounded-3xl overflow-hidden shadow-xs border border-melanie-border p-6 sm:p-8 flex flex-col md:flex-row gap-8 items-center">
+                <div class="w-full md:w-1/2 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xs bg-white group">
+                    <img id="img-kit-aniversario" src="imagens/boloaniver.jpeg" onerror="tratarErroImagem(this)" onclick="abrirZoom(this.src)" alt="Kit de Aniversário Melanie Perdigão" class="w-full h-full object-cover img-fade cursor-zoom-in">
+                    
+                    <button onclick="mudarFotoKit(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-8 h-8 rounded-full flex items-center justify-center transition shadow-xs opacity-0 group-hover:opacity-100">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <button onclick="mudarFotoKit(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-8 h-8 rounded-full flex items-center justify-center transition shadow-xs opacity-0 group-hover:opacity-100">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+                <div class="w-full md:w-1/2 space-y-4">
+                    <span class="bg-white text-melanie border border-melanie-border text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block">Kit Festa / Aniversário</span>
+                    <h3 class="text-2xl font-bold text-gray-900">Kit Aniversário Festivo</h3>
+                    <p class="text-2xl font-bold text-melanie">7.200,00 MT <span class="text-xs text-gray-400 font-normal line-through">7.600 MT</span></p>
+                    <ul class="text-xs text-gray-600 space-y-2 pt-2 border-t border-melanie-border/50">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-melanie"></i> 1 Bolo de Aniversário Personalizado</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-melanie"></i> 2 Dúzias de Salgadinhos Variados</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-melanie"></i> 2 Dúzias de Docinhos Gourmet</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-melanie"></i> Topo decorativo e caixa personalizada</li>
+                    </ul>
+                    <div class="pt-4">
+                        <button onclick="enviarKitWhatsApp('Kit Aniversário Festivo', '7.200,00 MT')" class="w-full bg-melanie hover:bg-melanie-dark text-white py-3.5 rounded-full font-semibold text-xs transition duration-300 flex items-center justify-center gap-2 shadow-xs uppercase tracking-wider">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Encomendar Kit de Aniversário
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: PRODUTOS / CATEGORIAS -->
+    <section id="cardapio" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center space-y-2 mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Nossas Delícias</h2>
+            <p class="text-gray-500 text-xs sm:text-sm">Explore os nossos produtos feitos sob encomenda</p>
+            <div class="w-12 h-0.5 bg-melanie mx-auto mt-2"></div>
+        </div>
+
+        <div class="max-w-lg mx-auto mb-8">
+            <div class="relative flex items-center bg-white shadow-xs border border-gray-200 rounded-full overflow-hidden focus-within:border-melanie focus-within:ring-1 focus-within:ring-melanie transition-all">
+                <span class="pl-5 text-gray-400"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" id="campo-busca" oninput="filtrarProdutos()" placeholder="Procurar cakepots, bolos, doces..." class="w-full pl-3 pr-5 py-3.5 text-sm bg-transparent outline-none text-gray-700">
+            </div>
+        </div>
+
+        <!-- CATEGORIAS -->
+        <div class="w-full border-b border-gray-200/60 mb-10 overflow-hidden">
+            <div class="flex space-x-2 overflow-x-auto pb-3 scroll-clean justify-start md:justify-center" id="container-categorias">
+                <button onclick="filtrarCategoria('todos', this)" class="btn-cat shrink-0 px-5 py-2.5 rounded-full font-semibold bg-melanie text-white text-xs sm:text-sm transition shadow-xs">Todos</button>
+                <button onclick="filtrarCategoria('pascoa', this)" class="btn-cat shrink-0 px-5 py-2.5 rounded-full font-medium text-gray-600 hover:text-melanie hover:bg-melanie-light text-xs sm:text-sm transition">Páscoa</button>
+                <button onclick="filtrarCategoria('cakepots', this)" class="btn-cat shrink-0 px-5 py-2.5 rounded-full font-medium text-gray-600 hover:text-melanie hover:bg-melanie-light text-xs sm:text-sm transition">Cakepots</button>
+                <button onclick="filtrarCategoria('docinhos', this)" class="btn-cat shrink-0 px-5 py-2.5 rounded-full font-medium text-gray-600 hover:text-melanie hover:bg-melanie-light text-xs sm:text-sm transition">Docinhos</button>
+                <button onclick="filtrarCategoria('salgadinhos', this)" class="btn-cat shrink-0 px-5 py-2.5 rounded-full font-medium text-gray-600 hover:text-melanie hover:bg-melanie-light text-xs sm:text-sm transition">Salgadinhos</button>
+                <button onclick="filtrarCategoria('bolos_caseiros', this)" class="btn-cat shrink-0 px-5 py-2.5 rounded-full font-medium text-gray-600 hover:text-melanie hover:bg-melanie-light text-xs sm:text-sm transition">Bolos Caseiros</button>
+                <button onclick="filtrarCategoria('bolos_aniversario', this)" class="btn-cat shrink-0 px-5 py-2.5 rounded-full font-medium text-gray-600 hover:text-melanie hover:bg-melanie-light text-xs sm:text-sm transition">Bolos de Aniversário</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="lista-produtos"></div>
+    </section>
+
+    <!-- GALERIA DE FOTOS -->
+    <section id="galeria" class="bg-white py-16 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2 mb-10">
+                <span class="text-melanie text-xs font-bold uppercase tracking-widest bg-melanie-light px-3.5 py-1 rounded-full border border-melanie-border">
+                    <i class="fa-solid fa-camera mr-1"></i> Portfólio
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Galeria de Trabalhos</h2>
+                <p class="text-gray-500 text-xs sm:text-sm">Um olhar especial sobre as nossas criações artísticas</p>
+                <div class="w-12 h-0.5 bg-melanie mx-auto mt-2"></div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div onclick="abrirZoom('imagens/boloaniver.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-melanie-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/boloaniver.jpeg" onerror="tratarErroImagem(this)" alt="Bolo Decorado" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-melanie/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/boloaniver3.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-melanie-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/boloaniver3.jpeg" onerror="tratarErroImagem(this)" alt="Bolo Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-melanie/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/combosalgados.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-melanie-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/combosalgados.jpeg" onerror="tratarErroImagem(this)" alt="Salgadinhos" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-melanie/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/mesadoces.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-melanie-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/mesadoces.jpeg" onerror="tratarErroImagem(this)" alt="Docinhos Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-melanie/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULADORA DE EVENTOS -->
+    <section id="calculadora" class="bg-melanie-cream py-16 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2 mb-10">
+                <span class="text-xs font-semibold text-melanie uppercase tracking-wider">Planeamento do Evento</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Calculadora de Quantidades</h2>
+                <p class="text-gray-500 text-xs sm:text-sm">Calcule a quantidade ideal para a sua celebração</p>
+                <div class="w-12 h-0.5 bg-melanie mx-auto mt-2"></div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xs border border-melanie-border space-y-6">
+                <form id="formCalculadora" onsubmit="calcularEvento(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="calcPessoas" class="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Nº de Convidados *</label>
+                        <input type="number" id="calcPessoas" min="1" placeholder="Ex: 25" required class="w-full p-3.5 border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-melanie bg-melanie-cream/50">
+                    </div>
+
+                    <div>
+                        <label for="calcTipo" class="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Tipo de Evento *</label>
+                        <select id="calcTipo" required class="w-full p-3.5 border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-melanie bg-melanie-cream/50">
+                            <option value="Aniversário">Aniversário</option>
+                            <option value="Noivado">Noivado</option>
+                            <option value="Casamento">Casamento</option>
+                            <option value="Festa Corporativa">Festa / Reunião</option>
+                        </select>
+                    </div>
+
+                    <div class="sm:col-span-2 pt-2">
+                        <button type="submit" class="w-full bg-melanie hover:bg-melanie-dark text-white font-semibold py-4 rounded-full transition shadow-xs flex items-center justify-center gap-2 text-xs sm:text-sm uppercase tracking-wide">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Calcular Estimativa
+                        </button>
+                    </div>
+                </form>
+
+                <div id="resultadoCalculadora" class="hidden bg-melanie-cream p-6 rounded-2xl border border-melanie-border space-y-4">
+                    <h3 class="font-bold text-gray-900 text-sm sm:text-base border-b border-melanie-border pb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-check text-melanie"></i> Sugestão Melanie Perdigão:
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm">
+                        <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs">
+                            <strong class="text-gray-500 block text-[11px] uppercase">Salgadinhos:</strong>
+                            <span id="resSalgados" class="text-melanie font-bold text-base mt-1 block">0 dúzias</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs">
+                            <strong class="text-gray-500 block text-[11px] uppercase">Docinhos:</strong>
+                            <span id="resDocinhos" class="text-melanie font-bold text-base mt-1 block">0 dúzias</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs">
+                            <strong class="text-gray-500 block text-[11px] uppercase">Bolo Recomendado:</strong>
+                            <span id="resBolo" class="text-melanie font-bold text-base mt-1 block">Tamanho 18</span>
+                        </div>
+                    </div>
+
+                    <button onclick="enviarCalculoWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-full shadow-xs transition flex items-center justify-center gap-2 text-xs uppercase tracking-wide">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Pedir Orçamento Deste Cálculo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTACTO & M-PESA -->
+    <section id="contacto-secao" class="bg-white py-16 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2 mb-12">
+                <span class="text-melanie text-xs font-bold uppercase tracking-widest bg-melanie-light px-3 py-1 rounded-full border border-melanie-border">
+                    <i class="fa-solid fa-paper-plane mr-1"></i> Atendimento
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Entre em Contacto</h2>
+                <p class="text-gray-500 text-xs sm:text-sm">A antecedência é amiga da perfeição 😊</p>
+                <div class="w-12 h-0.5 bg-melanie mx-auto mt-2"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto mb-8">
+                <!-- TELEFONE / WHATSAPP -->
+                <div class="bg-melanie-cream p-6 rounded-3xl border border-melanie-border shadow-xs text-center space-y-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto text-melanie text-lg shadow-xs">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm">Contactos & WhatsApp</h3>
+                    <p class="text-[11px] text-gray-500">Atendimento e Encomendas</p>
+                    <a href="https://wa.me/258824865582" target="_blank" class="block font-bold text-melanie hover:underline text-xs tracking-wide">
+                        +258 82 486 5582
+                    </a>
+                    <p class="text-gray-600 text-[11px]">83 333 982 | 87 505 8439</p>
+                </div>
+
+                <!-- PAGAMENTO M-PESA -->
+                <div class="bg-melanie-cream p-6 rounded-3xl border border-melanie-border shadow-xs text-center space-y-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto text-red-500 text-lg shadow-xs font-bold">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm">Pagamento M-Pesa</h3>
+                    <p class="text-[11px] text-gray-500">Confirmação de Encomendas</p>
+                    <div class="bg-white p-2.5 rounded-2xl text-[11px] space-y-0.5 shadow-xs border border-gray-100">
+                        <p class="font-bold text-melanie text-xs">82 486 5582 / 83 333 982</p>
+                        <p class="text-gray-600">Melanie Perdigão</p>
+                    </div>
+                </div>
+
+                <!-- LOCALIZAÇÃO -->
+                <div class="bg-melanie-cream p-6 rounded-3xl border border-melanie-border shadow-xs text-center space-y-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto text-melanie text-lg shadow-xs">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm">Endereço</h3>
+                    <p class="text-[11px] text-gray-500">Localização</p>
+                    <span class="inline-block font-semibold text-gray-700 text-xs">
+                        Pioneiros, Beira, Moçambique
+                    </span>
+                </div>
+
+                <!-- INSTAGRAM -->
+                <div class="bg-melanie-cream p-6 rounded-3xl border border-melanie-border shadow-xs text-center space-y-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto text-melanie text-lg shadow-xs">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm">Instagram</h3>
+                    <p class="text-[11px] text-gray-500">Siga o nosso trabalho</p>
+                    <a href="https://instagram.com/bymelanieperdigao" target="_blank" class="inline-block font-semibold text-melanie text-xs hover:underline">
+                        @bymelanieperdigao
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE ZOOM / LIGHTBOX -->
+    <div id="modalZoom" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm cursor-zoom-out" onclick="fecharZoom()">
+        <button onclick="fecharZoom()" class="absolute top-5 right-5 text-white/80 hover:text-white text-3xl z-50 p-2"><i class="fa-solid fa-xmark"></i></button>
+        <img id="imgModalZoom" src="" alt="Imagem Ampliada" class="max-w-full max-h-[90vh] object-contain rounded-2xl shadow-2xl transition-transform duration-300">
+    </div>
+
+    <!-- MODAL DE ESCOLHA DE OPÇÕES -->
+    <div id="modalOpcoes" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-3 sm:p-4 backdrop-blur-xs">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-xl transform transition-all flex flex-col max-h-[90vh]">
+            <div class="relative bg-melanie text-white p-5 flex items-center justify-between">
+                <h3 id="modalOpcoesTitulo" class="font-bold text-base text-white">Escolher Opção</h3>
+                <button onclick="fecharModalOpcoes()" class="text-white/80 hover:text-white text-xl p-1"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto space-y-3 flex-1" id="modalOpcoesCorpo"></div>
+
+            <div class="p-5 border-t border-gray-100 bg-melanie-cream flex items-center justify-between gap-3">
+                <div>
+                    <span class="text-[10px] text-gray-400 block uppercase">Preço Total</span>
+                    <span id="modalOpcoesPreco" class="text-lg font-bold text-melanie">0 MZN</span>
+                </div>
+                <button onclick="confirmarAdicaoCarrinho()" class="bg-melanie hover:bg-melanie-dark text-white px-6 py-3 rounded-full font-semibold text-xs transition shadow-xs flex items-center gap-2">
+                    <i class="fa-solid fa-cart-plus"></i> Adicionar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DRAWER / MODAL DO CARRINHO -->
+    <div id="carrinho-modal" class="fixed inset-0 bg-black/50 z-50 hidden transition-opacity duration-300 flex justify-end">
+        <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between transform transition-transform duration-300">
+            <div class="p-5 border-b border-gray-100 flex items-center justify-between bg-melanie text-white">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-bag-shopping text-white text-lg"></i>
+                    <h3 class="font-bold text-base">Seu Pedido</h3>
+                </div>
+                <button onclick="toggleCarrinho()" class="text-white/80 hover:text-white text-xl p-1"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="p-5 overflow-y-auto flex-1 space-y-3" id="itens-carrinho"></div>
+
+            <div class="p-5 border-t border-gray-100 bg-melanie-cream space-y-4">
+                <div class="bg-white p-3 rounded-2xl border border-melanie-border text-xs space-y-1">
+                    <span class="block font-bold text-melanie uppercase tracking-wider">💳 Pagamento M-Pesa:</span>
+                    <p class="text-gray-600 text-[11px]"><strong>Nº:</strong> 82 486 5582 / 83 333 982 | <strong>Titular:</strong> Melanie Perdigão</p>
+                </div>
+
+                <div class="bg-white p-3.5 rounded-2xl border border-gray-200/80 space-y-2">
+                    <span class="block text-[11px] font-bold text-gray-700 uppercase tracking-wider">Data e Local de Entrega / Levantamento:</span>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div>
+                            <label for="dataEntrega" class="block text-[10px] font-semibold text-gray-400 uppercase">Data Desejada *</label>
+                            <input type="date" id="dataEntrega" class="w-full p-2.5 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-melanie bg-melanie-cream/50" required>
+                        </div>
+                        <div>
+                            <label for="localEntrega" class="block text-[10px] font-semibold text-gray-400 uppercase">Local de Entrega ou Bairro *</label>
+                            <input type="text" id="localEntrega" placeholder="Ex: Pioneiros / Beira" class="w-full p-2.5 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-melanie bg-melanie-cream/50" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between text-base font-bold text-gray-800 pt-2 border-t border-gray-200/60">
+                    <span>Total Final:</span>
+                    <span id="total-carrinho" class="text-xl text-melanie font-bold">0 MZN</span>
+                </div>
+
+                <button onclick="enviarPedidoWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-full shadow-xs transition flex items-center justify-center gap-2 text-xs uppercase tracking-wide">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Enviar Pedido via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/258824865582?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20encomenda." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3.5 md:px-5 md:py-3 rounded-full shadow-md transition-all duration-300 flex items-center gap-2 group hover:scale-105 border-2 border-white"
+       aria-label="Atendimento WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="hidden md:inline font-semibold text-xs uppercase tracking-wider">Fazer Encomenda</span>
+    </a>
+
+    <!-- BARRA DE MENU FLUTUANTE MOBILE -->
+    <nav class="fixed bottom-3 left-4 right-4 z-40 bg-white/95 backdrop-blur-md rounded-2xl shadow-md border border-gray-200/60 p-1.5 md:hidden">
+        <div class="flex justify-around items-center">
+            <a href="#inicio" class="flex flex-col items-center py-1 px-2 text-gray-500 hover:text-melanie transition text-center">
+                <i class="fa-solid fa-house text-sm"></i>
+                <span class="text-[10px] font-medium mt-0.5">Início</span>
+            </a>
+            <a href="#kits" class="flex flex-col items-center py-1 px-2 text-melanie font-bold transition text-center">
+                <i class="fa-solid fa-gift text-sm"></i>
+                <span class="text-[10px] font-medium mt-0.5">Kits</span>
+            </a>
+            <a href="#cardapio" class="flex flex-col items-center py-1 px-2 text-gray-500 hover:text-melanie transition text-center">
+                <i class="fa-solid fa-list text-sm"></i>
+                <span class="text-[10px] font-medium mt-0.5">Menu</span>
+            </a>
+            <button onclick="toggleCarrinho()" class="relative flex flex-col items-center py-1 px-2 text-melanie font-bold transition text-center">
+                <i class="fa-solid fa-bag-shopping text-sm"></i>
+                <span class="text-[10px] font-medium mt-0.5">Pedido</span>
+                <span id="cart-count-float" class="absolute -top-1 -right-1 bg-melanie text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-white">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- FOOTER CLEAN -->
+    <footer id="contacto" class="bg-white text-gray-600 pt-12 pb-20 md:pb-8 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div class="space-y-3 flex flex-col items-center md:items-start">
+                <div class="flex items-center gap-3">
+                    <img src="imagens/logo.png" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x150/F48FB1/FFFFFF?text=Melanie+Perdigao';" alt="Logo Rodapé" class="h-10 w-10 object-cover rounded-full border border-melanie-border p-0.5">
+                    <h3 class="text-base font-bold text-gray-900 uppercase">Melanie Perdigão</h3>
+                </div>
+                <p class="text-gray-500 text-xs leading-relaxed">Doces e bolos personalizados feitos com o ingrediente mais especial: o amor 💕</p>
+            </div>
+            
+            <div class="space-y-2 text-xs">
+                <h4 class="font-bold uppercase text-gray-900 tracking-wider mb-2">Localização & Contacto</h4>
+                <p><i class="fa-solid fa-location-dot mr-2 text-melanie"></i> Pioneiros, Beira, Moçambique</p>
+                <p><i class="fa-solid fa-phone mr-2 text-melanie"></i> +258 82 486 5582 / 83 333 982 / 87 505 8439</p>
+                <p><i class="fa-brands fa-instagram mr-2 text-melanie"></i> @bymelanieperdigao</p>
+            </div>
+
+            <div class="space-y-2 text-xs">
+                <h4 class="font-bold uppercase text-gray-900 tracking-wider mb-2">Encomendas</h4>
+                <p class="text-gray-500">A antecedência é amiga da perfeição 😊</p>
+                <p class="font-semibold text-gray-800">Segunda a Sábado</p>
+            </div>
+        </div>
+
+        <hr class="border-gray-100 my-8 max-w-7xl mx-auto">
+        <div class="text-center text-xs text-gray-400">&copy; 2026 Melanie Perdigão (@bymelanieperdigao) - Todos os direitos reservados.</div>
+    </footer>
+
+    <!-- SCRIPTS JS -->
+    <script>
+        // PRODUTOS ADAPTADOS ÀS CATEGORIAS DA PÁGINA
+        const produtosMelanie = [
+            {
+                id: 1,
+                nome: "Cakepots Gourmet",
+                categoria: "cakepots",
+                descricao: "Deliciosos bolos no pote montados em camadas generosas de recheio cremoso e bolo super fofinho.",
+                imagens: ["imagens/mesadoces.jpeg", "imagens/boloaniver3.jpeg"],
+                opcoes: [
+                    { nome: "Cakepot de Chocolate e Brigadeiro", preco: 250 },
+                    { nome: "Cakepot de Maracujá com Natas", preco: 250 },
+                    { nome: "Cakepot Especial Ninho com Nutella", preco: 300 }
+                ]
+            },
+            {
+                id: 2,
+                nome: "Especial de Páscoa (Ovos Recheados)",
+                categoria: "pascoa",
+                descricao: "Trufas e ovos de Páscoa recheados artesanalmente com os melhores ingredientes da Melanie Perdigão.",
+                imagens: ["imagens/mesadoces.jpeg"],
+                opcoes: [
+                    { nome: "Ovo de Colher Brigadeiro Gourmet (350g)", preco: 850 },
+                    { nome: "Ovo de Colher Maracujá & Doce de Leite (350g)", preco: 900 },
+                    { nome: "Caixa de Trufas Sortidas de Páscoa (6 un)", preco: 500 }
+                ]
+            },
+            {
+                id: 3,
+                nome: "Docinhos Variados (Dúzia)",
+                categoria: "docinhos",
+                descricao: "Brigadeiros gourmet, beijinhos e docinhos artesanais finos para festas e aniversários.",
+                imagens: ["imagens/mesadoces.jpeg", "imagens/boloaniver3.jpeg"],
+                opcoes: [
+                    { nome: "Brigadeiro Tradicional Gourmet (12 un)", preco: 350 },
+                    { nome: "Beijinho de Coco (12 un)", preco: 350 },
+                    { nome: "Mix de Docinhos Sortidos (12 un)", preco: 400 }
+                ]
+            },
+            {
+                id: 4,
+                nome: "Salgadinhos Deliciosos (Dúzia)",
+                categoria: "salgadinhos",
+                descricao: "Salgadinhos crocantes e recheados para acompanhamento perfeito da sua festa.",
+                imagens: ["imagens/combosalgados.jpeg", "imagens/mesadoces.jpeg"],
+                opcoes: [
+                    { nome: "Rissóis de Camarão (12 un)", preco: 320 },
+                    { nome: "Rissóis de Carne (12 un)", preco: 300 },
+                    { nome: "Chamuças de Frango (12 un)", preco: 280 },
+                    { nome: "Coxinhas de Frango (12 un)", preco: 330 }
+                ]
+            },
+            {
+                id: 5,
+                nome: "Bolos Caseiros Tradicionais",
+                categoria: "bolos_caseiros",
+                descricao: "Bolos aromáticos e caseiros perfeitos para o lanche da tarde ou pequenas celebrações.",
+                imagens: ["imagens/boloaniver3.jpeg", "imagens/boloaniver.jpeg"],
+                opcoes: [
+                    { nome: "Bolo Caseiro de Laranja / Baunilha", preco: 600 },
+                    { nome: "Bolo Caseiro de Chocolate com Calda", preco: 750 },
+                    { nome: "Bolo Especial de Cenoura e Brigadeiro", preco: 800 }
+                ]
+            },
+            {
+                id: 6,
+                nome: "Bolo de Aniversário Personalizado",
+                categoria: "bolos_aniversario",
+                descricao: "Bolos artisticamente decorados ao detalhe para tornar a sua festa inesquecível.",
+                imagens: ["imagens/boloaniver.jpeg", "imagens/boloaniver3.jpeg", "imagens/mesadoces.jpeg"],
+                opcoes: [
+                    { nome: "Tamanho Pequeno (Forma 18)", preco: 1500 },
+                    { nome: "Tamanho Médio (Forma 20)", preco: 2000 },
+                    { nome: "Tamanho Grande (Forma 22)", preco: 2800 },
+                    { nome: "Bolo Especial 2 Andares Personalizado", preco: 4500 }
+                ]
+            }
+        ];
+
+        const fotosKitAniversario = ["imagens/boloaniver.jpeg", "imagens/combosalgados.jpeg", "imagens/mesadoces.jpeg"];
+        let indexKitAtual = 0;
+
+        let categoriaAtual = 'todos';
+        let indicesImagensAtivas = {};
+        let carrinho = [];
+        let produtoSelecionadoTemp = null;
+        let opcaoSelecionadaTemp = null;
+        let timerSlideshow = null;
+        let ultimoCalculoEvento = null;
+
+        const IMG_FALLBACK = "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderizarProdutos(produtosMelanie);
+            iniciarSlideshowAutomatico();
+        });
+
+        function tratarErroImagem(imgElement) {
+            imgElement.onerror = null;
+            imgElement.src = IMG_FALLBACK;
+        }
+
+        function abrirZoom(src) {
+            const modal = document.getElementById('modalZoom');
+            const img = document.getElementById('imgModalZoom');
+            img.src = src;
+            modal.classList.remove('hidden');
+        }
+
+        function fecharZoom() {
+            document.getElementById('modalZoom').classList.add('hidden');
+        }
+
+        function iniciarSlideshowAutomatico() {
+            if (timerSlideshow) clearInterval(timerSlideshow);
+            timerSlideshow = setInterval(() => {
+                produtosMelanie.forEach(produto => {
+                    if (produto.imagens && produto.imagens.length > 1) {
+                        mudarFotoCard(produto.id, 1, false);
+                    }
+                });
+                mudarFotoKit(1, false);
+            }, 3500);
+        }
+
+        function mudarFotoKit(direcao, interacaoManual = true) {
+            const imgKit = document.getElementById('img-kit-aniversario');
+            if (!imgKit) return;
+
+            indexKitAtual += direcao;
+            if (indexKitAtual >= fotosKitAniversario.length) indexKitAtual = 0;
+            if (indexKitAtual < 0) indexKitAtual = fotosKitAniversario.length - 1;
+
+            imgKit.style.opacity = '0.3';
+            setTimeout(() => {
+                imgKit.src = fotosKitAniversario[indexKitAtual];
+                imgKit.style.opacity = '1';
+            }, 150);
+
+            if (interacaoManual) iniciarSlideshowAutomatico();
+        }
+
+        function renderizarProdutos(lista) {
+            const container = document.getElementById('lista-produtos');
+            container.innerHTML = "";
+
+            if (!lista || lista.length === 0) {
+                container.innerHTML = `<p class="col-span-full text-center text-gray-400 italic py-12 text-sm">Nenhum produto encontrado nesta categoria.</p>`;
+                return;
+            }
+
+            lista.forEach(p => {
+                const fotosArray = p.imagens && p.imagens.length > 0 ? p.imagens : [IMG_FALLBACK];
+                const pId = p.id;
+                if (indicesImagensAtivas[pId] === undefined) indicesImagensAtivas[pId] = 0;
+
+                let precoExibicao = "";
+                if (p.precoBase) {
+                    precoExibicao = `${parseFloat(p.precoBase).toLocaleString('pt-MZ')} MZN`;
+                } else if (p.opcoes && p.opcoes.length > 0) {
+                    const menorPreco = Math.min(...p.opcoes.map(o => o.preco));
+                    precoExibicao = `A partir de ${menorPreco.toLocaleString('pt-MZ')} MZN`;
+                }
+
+                let catBadgeText = p.categoria.replace('_', ' ').toUpperCase();
+
+                let dotsHtml = "";
+                if (fotosArray.length > 1) {
+                    dotsHtml = `<div class="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5 z-10">`;
+                    fotosArray.forEach((_, idx) => {
+                        const activeClass = idx === indicesImagensAtivas[pId] ? 'bg-white w-3' : 'bg-white/60 w-1.5';
+                        dotsHtml += `<span id="dot-${pId}-${idx}" class="h-1.5 rounded-full transition-all duration-300 ${activeClass}"></span>`;
+                    });
+                    dotsHtml += `</div>`;
+                }
+
+                let navBtnsHtml = "";
+                if (fotosArray.length > 1) {
+                    navBtnsHtml = `
+                        <button onclick="event.stopPropagation(); mudarFotoCard(${pId}, -1, true)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-7 h-7 rounded-full flex items-center justify-center transition shadow-xs opacity-0 group-hover:opacity-100 z-10">
+                            <i class="fa-solid fa-chevron-left text-[10px]"></i>
+                        </button>
+                        <button onclick="event.stopPropagation(); mudarFotoCard(${pId}, 1, true)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-7 h-7 rounded-full flex items-center justify-center transition shadow-xs opacity-0 group-hover:opacity-100 z-10">
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    `;
+                }
+
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-3xl overflow-hidden shadow-xs hover:shadow-sm border border-gray-100 flex flex-col justify-between transition-all duration-300 group";
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative overflow-hidden aspect-[4/3] bg-melanie-cream group/img">
+                            <img id="img-slide-${pId}" src="${fotosArray[indicesImagensAtivas[pId]]}" onerror="tratarErroImagem(this)" onclick="abrirZoom(this.src)" alt="${p.nome}" class="img-fade w-full h-full object-cover group-hover:scale-102 cursor-zoom-in">
+                            <span class="absolute top-3 right-3 bg-white/95 backdrop-blur-xs text-melanie text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10 shadow-xs border border-melanie-border/50">${catBadgeText}</span>
+                            ${navBtnsHtml}
+                            ${dotsHtml}
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-base font-bold text-gray-900 group-hover:text-melanie transition-colors">${p.nome}</h3>
+                            <p class="text-gray-500 text-xs leading-relaxed line-clamp-3">${p.descricao}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between mt-2">
+                        <div>
+                            <span class="text-[10px] text-gray-400 block">Preço</span>
+                            <span class="text-sm sm:text-base font-bold text-melanie">${precoExibicao}</span>
+                        </div>
+                        <button onclick="cliqueBotaoProduto(${p.id})" class="bg-melanie hover:bg-melanie-dark text-white px-4 py-2.5 rounded-full font-semibold text-xs transition duration-300 flex items-center gap-2 shadow-xs">
+                            <i class="fa-solid fa-cart-plus"></i> Adicionar
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function mudarFotoCard(id, direcao, interacaoManual = false) {
+            const produto = produtosMelanie.find(p => p.id === id);
+            if (!produto) return;
+            const imgElement = document.getElementById(`img-slide-${id}`);
+            if (!imgElement) return;
+
+            const fotos = produto.imagens && produto.imagens.length > 0 ? produto.imagens : [IMG_FALLBACK];
+            let index = indicesImagensAtivas[id] + direcao;
+
+            if (index >= fotos.length) index = 0;
+            if (index < 0) index = fotos.length - 1;
+
+            indicesImagensAtivas[id] = index;
+
+            fotos.forEach((_, idx) => {
+                const dot = document.getElementById(`dot-${id}-${idx}`);
+                if (dot) {
+                    if (idx === index) {
+                        dot.className = "h-1.5 rounded-full transition-all duration-300 bg-white w-3";
+                    } else {
+                        dot.className = "h-1.5 rounded-full transition-all duration-300 bg-white/60 w-1.5";
+                    }
+                }
+            });
+
+            imgElement.style.opacity = '0.3';
+            setTimeout(() => {
+                imgElement.src = fotos[index];
+                imgElement.style.opacity = '1';
+            }, 150);
+
+            if (interacaoManual) iniciarSlideshowAutomatico();
+        }
+
+        function filtrarCategoria(cat, btn) {
+            categoriaAtual = cat;
+            document.querySelectorAll('.btn-cat').forEach(b => {
+                b.className = "btn-cat shrink-0 px-5 py-2.5 rounded-full font-medium text-gray-600 hover:text-melanie hover:bg-melanie-light text-xs sm:text-sm transition";
+            });
+            if (btn) btn.className = "btn-cat shrink-0 px-5 py-2.5 rounded-full font-semibold bg-melanie text-white text-xs sm:text-sm transition shadow-xs";
+
+            filtrarProdutos();
+        }
+
+        function filtrarProdutos() {
+            const termo = document.getElementById('campo-busca').value.toLowerCase().trim();
+            const filtrados = produtosMelanie.filter(p => {
+                const bateCategoria = (categoriaAtual === 'todos' || p.categoria === categoriaAtual);
+                const bateTexto = p.nome.toLowerCase().includes(termo) || p.descricao.toLowerCase().includes(termo);
+                return bateCategoria && bateTexto;
+            });
+            renderizarProdutos(filtrados);
+        }
+
+        function cliqueBotaoProduto(idProduto) {
+            const produto = produtosMelanie.find(p => p.id === idProduto);
+            if (!produto) return;
+
+            if (produto.opcoes && produto.opcoes.length > 0) {
+                abrirModalOpcoes(produto);
+            } else {
+                adicionarAoCarrinhoDireto(produto);
+            }
+        }
+
+        function abrirModalOpcoes(produto) {
+            produtoSelecionadoTemp = produto;
+            const modal = document.getElementById('modalOpcoes');
+            const titulo = document.getElementById('modalOpcoesTitulo');
+            const corpo = document.getElementById('modalOpcoesCorpo');
+            const precoSpan = document.getElementById('modalOpcoesPreco');
+
+            titulo.innerText = `Escolher Opção: ${produto.nome}`;
+            corpo.innerHTML = "";
+
+            produto.opcoes.forEach((opcao, idx) => {
+                const checked = idx === 0 ? 'checked' : '';
+                if (idx === 0) opcaoSelecionadaTemp = opcao;
+
+                const div = document.createElement('label');
+                div.className = "flex items-center justify-between p-3.5 border border-gray-100 rounded-2xl cursor-pointer hover:border-melanie bg-melanie-cream/50 transition";
+                div.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <input type="radio" name="opcaoProduto" value="${idx}" ${checked} onchange="selecionarOpcaoTemp(${produto.id}, ${idx})" class="accent-melanie">
+                        <span class="text-sm font-semibold text-gray-800">${opcao.nome}</span>
+                    </div>
+                    <span class="text-sm font-bold text-melanie">${opcao.preco.toLocaleString('pt-MZ')} MZN</span>
+                `;
+                corpo.appendChild(div);
+            });
+
+            if (opcaoSelecionadaTemp) {
+                precoSpan.innerText = `${opcaoSelecionadaTemp.preco.toLocaleString('pt-MZ')} MZN`;
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function selecionarOpcaoTemp(idProduto, idxOpcao) {
+            const produto = produtosMelanie.find(p => p.id === idProduto);
+            if (!produto) return;
+            opcaoSelecionadaTemp = produto.opcoes[idxOpcao];
+            document.getElementById('modalOpcoesPreco').innerText = `${opcaoSelecionadaTemp.preco.toLocaleString('pt-MZ')} MZN`;
+        }
+
+        function fecharModalOpcoes() {
+            document.getElementById('modalOpcoes').classList.add('hidden');
+            produtoSelecionadoTemp = null;
+            opcaoSelecionadaTemp = null;
+        }
+
+        function confirmarAdicaoCarrinho() {
+            if (!produtoSelecionadoTemp || !opcaoSelecionadaTemp) return;
+
+            const item = {
+                idCart: Date.now(),
+                id: produtoSelecionadoTemp.id,
+                nome: produtoSelecionadoTemp.nome,
+                detalhes: opcaoSelecionadaTemp.nome,
+                preco: opcaoSelecionadaTemp.preco,
+                qtd: 1
+            };
+
+            carrinho.push(item);
+            fecharModalOpcoes();
+            atualizarCarrinho();
+            toggleCarrinho(true);
+        }
+
+        function adicionarAoCarrinhoDireto(produto) {
+            const item = {
+                idCart: Date.now(),
+                id: produto.id,
+                nome: produto.nome,
+                detalhes: produto.categoria.toUpperCase(),
+                preco: produto.precoBase,
+                qtd: 1
+            };
+
+            carrinho.push(item);
+            atualizarCarrinho();
+            toggleCarrinho(true);
+        }
+
+        function removerItemCarrinho(idCart) {
+            carrinho = carrinho.filter(i => i.idCart !== idCart);
+            atualizarCarrinho();
+        }
+
+        function alterarQuantidade(idCart, delta) {
+            const item = carrinho.find(i => i.idCart === idCart);
+            if (item) {
+                item.qtd += delta;
+                if (item.qtd <= 0) {
+                    removerItemCarrinho(idCart);
+                    return;
+                }
+            }
+            atualizarCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            const container = document.getElementById('itens-carrinho');
+            const headerCount = document.getElementById('cart-count-header');
+            const floatCounts = document.querySelectorAll('#cart-count-float');
+
+            container.innerHTML = "";
+            let totalItens = 0;
+
+            if (carrinho.length === 0) {
+                container.innerHTML = `<div class="text-center py-12 text-gray-400">
+                    <i class="fa-solid fa-bag-shopping text-4xl mb-3 block text-melanie/30"></i>
+                    <p class="text-xs">Seu carrinho está vazio.</p>
+                </div>`;
+            } else {
+                carrinho.forEach(item => {
+                    const subtotal = item.preco * item.qtd;
+                    totalItens += item.qtd;
+
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = "bg-melanie-cream p-3.5 rounded-2xl border border-melanie-border/60 space-y-2 relative group";
+                    itemDiv.innerHTML = `
+                        <div class="flex items-start justify-between pr-6">
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-xs">${item.nome}</h4>
+                                <p class="text-[11px] text-melanie font-medium">${item.detalhes}</p>
+                            </div>
+                            <span class="font-bold text-melanie text-xs">${subtotal.toLocaleString('pt-MZ')} MZN</span>
+                        </div>
+                        
+                        <button onclick="removerItemCarrinho(${item.idCart})" title="Remover item" class="absolute top-3 right-3 text-red-400 hover:text-red-600 p-1 text-xs">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+
+                        <div class="flex items-center justify-between border-t border-gray-200/50 pt-2">
+                            <span class="text-[10px] text-gray-400">${item.preco.toLocaleString('pt-MZ')} MZN un.</span>
+                            <div class="flex items-center border border-gray-200 rounded-xl bg-white overflow-hidden">
+                                <button onclick="alterarQuantidade(${item.idCart}, -1)" class="px-2.5 py-0.5 text-gray-600 hover:bg-gray-100 text-xs font-bold">-</button>
+                                <span class="px-2.5 text-xs font-bold text-gray-800">${item.qtd}</span>
+                                <button onclick="alterarQuantidade(${item.idCart}, 1)" class="px-2.5 py-0.5 text-gray-600 hover:bg-gray-100 text-xs font-bold">+</button>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(itemDiv);
+                });
+            }
+
+            if (headerCount) headerCount.innerText = totalItens;
+            floatCounts.forEach(fc => fc.innerText = totalItens);
+            atualizarTotalCarrinho();
+        }
+
+        function atualizarTotalCarrinho() {
+            let subtotal = 0;
+            carrinho.forEach(item => subtotal += (item.preco * item.qtd));
+            document.getElementById('total-carrinho').innerText = `${subtotal.toLocaleString('pt-MZ')} MZN`;
+        }
+
+        function toggleCarrinho(forcarAbertura = false) {
+            const modal = document.getElementById('carrinho-modal');
+            if (forcarAbertura || modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function enviarPedidoWhatsApp() {
+            if (carrinho.length === 0) {
+                alert("O seu carrinho está vazio.");
+                return;
+            }
+
+            const dataEntrega = document.getElementById('dataEntrega').value;
+            const localEntrega = document.getElementById('localEntrega').value.trim();
+
+            if (!dataEntrega || !localEntrega) {
+                alert("Por favor, preencha a data e o local de entrega / levantamento antes de enviar o pedido.");
+                return;
+            }
+
+            const telefone = "258824865582";
+            let mensagem = "👋 Olá, Melanie Perdigão! Gostaria de realizar a seguinte encomenda:\n\n";
+
+            let subtotal = 0;
+            carrinho.forEach(item => {
+                const sub = item.preco * item.qtd;
+                subtotal += sub;
+                mensagem += `• *${item.nome}* (${item.detalhes})\n  *Qtd:* ${item.qtd}x | *Subtotal:* ${sub.toLocaleString('pt-MZ')} MZN\n\n`;
+            });
+
+            mensagem += `─────────────\n`;
+            mensagem += `📅 *Data Desejada:* ${dataEntrega}\n`;
+            mensagem += `📍 *Local de Entrega/Levantamento:* ${localEntrega}\n`;
+            mensagem += `💰 *Total Final:* ${subtotal.toLocaleString('pt-MZ')} MZN\n\n`;
+            mensagem += `💳 *Método de Pagamento (M-Pesa):* 82 486 5582 / 83 333 982 (Melanie Perdigão)\n\n`;
+            mensagem += `Por favor, confirmem a disponibilidade da encomenda. Obrigado!`;
+
+            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`, '_blank');
+        }
+
+        function enviarKitWhatsApp(nomeKit, precoKit) {
+            const telefone = "258824865582";
+            let msg = `👋 Olá, Melanie Perdigão!\n\nGostaria de encomendar o *${nomeKit}* (${precoKit}).\n\nPor favor, confirmem a disponibilidade para a minha data. Obrigado!`;
+            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function calcularEvento(e) {
+            e.preventDefault();
+            const pessoas = parseInt(document.getElementById('calcPessoas').value);
+            const tipo = document.getElementById('calcTipo').value;
+
+            if (!pessoas || pessoas < 1) return;
+
+            const salgadosDuzias = Math.ceil((pessoas * 6) / 12);
+            const docinhosDuzias = Math.ceil((pessoas * 4) / 12);
+            let boloSugerido = "Tamanho Pequeno (Forma 18)";
+
+            if (pessoas > 12 && pessoas <= 25) boloSugerido = "Tamanho Médio (Forma 20)";
+            else if (pessoas > 25 && pessoas <= 40) boloSugerido = "Tamanho Grande (Forma 22)";
+            else if (pessoas > 40) boloSugerido = "Bolo Especial de 2 Andares";
+
+            document.getElementById('resSalgados').innerText = `${salgadosDuzias} dúzias`;
+            document.getElementById('resDocinhos').innerText = `${docinhosDuzias} dúzias`;
+            document.getElementById('resBolo').innerText = boloSugerido;
+
+            ultimoCalculoEvento = { pessoas, tipo, salgadosDuzias, docinhosDuzias, boloSugerido };
+            document.getElementById('resultadoCalculadora').classList.remove('hidden');
+        }
+
+        function enviarCalculoWhatsApp() {
+            if (!ultimoCalculoEvento) return;
+            const telefone = "258824865582";
+            
+            let msg = `👋 Olá, Melanie Perdigão!\n\nFiz um cálculo no site para o meu evento e gostaria de solicitar um orçamento:\n\n`;
+            msg += `👥 *Nº de Convidados:* ${ultimoCalculoEvento.pessoas}\n`;
+            msg += `🎉 *Tipo de Evento:* ${ultimoCalculoEvento.tipo}\n\n`;
+            msg += `📌 *Estimativa Gerada:*\n`;
+            msg += `• *Salgadinhos:* ${ultimoCalculoEvento.salgadosDuzias} dúzias\n`;
+            msg += `• *Docinhos:* ${ultimoCalculoEvento.docinhosDuzias} dúzias\n`;
+            msg += `• *Bolo Recomendado:* ${ultimoCalculoEvento.boloSugerido}\n\n`;
+            msg += `Gostaria de confirmar orçamento e disponibilidade!`;
+
+            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
